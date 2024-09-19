@@ -1239,7 +1239,7 @@ variable."
   (or (org-msg-get-prop "attachment")
       (save-excursion
 	(goto-char (org-msg-start))
-	(while (re-search-forward org-property-re nil t)
+	(while (re-search-forward org-property-re (org-msg-end) t)
 	  (forward-line))
 	(not (re-search-forward org-msg-attached-file-reference (org-msg-end) t)))
       (y-or-n-p "You may have forgotten to attach a file. Do you still want \
