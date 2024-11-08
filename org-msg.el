@@ -1503,9 +1503,7 @@ HTML emails."
   (unless (mu4e-running-p)
     (org-msg--mu4e-fun-call "start"))
   (when mu4e-compose-complete-addresses
-    (org-msg--mu4e-fun-call "compose-setup-completion"))
-  (when-let ((sent-hook (org-msg--mu4e-fun "compose-before-send")))
-    (add-hook 'message-sent-hook sent-hook nil t)))
+    (org-msg--mu4e-fun-call "compose-setup-completion")))
 
 (defalias 'org-msg-edit-kill-buffer-mu4e 'mu4e-message-kill-buffer)
 
